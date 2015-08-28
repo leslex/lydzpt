@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>首页</title>
+		<title>首页 - 丽江旅游定制平台</title>
 		<meta charset="utf-8">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="丽江旅游包车、农家乐、机场接送、家庭旅馆、丽江客栈" name="keywords">
+        <meta content="提供旅游包车、接机送机、景点接送、客栈接送等。提供农家乐服务，专车接送住宿服务。" name="description">
 		<meta name="format-detection" content="telephone=no" />
 		<link rel="icon" href="images/favicon.ico">
 		<link rel="shortcut icon" href="images/favicon.ico" />
@@ -160,17 +160,26 @@
 				</div>
 				<div class="clear"></div>
 				<div class="grid_6">
-					<h3>留言(专车接送、客栈预定)</h3>
+					<h3>留言预定</h3>
 					<form id="bookingForm">
                         <strong>联系人</strong>
                         <label class="tmInput">
                             <input name="name" placeHolder="联系人" type="text" data-constraints='@Required @AlphaSpecial'>
-                            <span class="empty-message">*必填.</span>
                         </label>
                         <div class="clear"></div>
                         <strong>联系电话</strong>
                         <label class="tmInput">
                             <input name="phone" placeHolder="联系电话" type="text" data-constraints="@Required">
+                        </label>
+                        <div class="clear"></div>
+                        <strong>开始时间</strong>
+                        <label class="tmDatepicker">
+                            <input type="text" name="Check-in" placeHolder='2015-08-10' data-constraints="@NotEmpty @Required @Date">
+                        </label>
+                        <div class="clear"></div>
+                        <strong>结束时间</strong>
+                        <label class="tmDatepicker">
+                            <input type="text" name="Check-out" placeHolder='2015-08-12' data-constraints="@NotEmpty @Required @Date">
                         </label>
 						<div class="clear"></div>
 						<div class="fl1 fl2">
@@ -214,9 +223,8 @@
 						<div class="clear"></div>
 						<div class="tmTextarea">
 							<textarea name="Message" placeHolder="附加留言" data-constraints='@Length(min=5,max=999999)'></textarea>
-                            <span class="error-message">*非必填，留言太短，5字以上.</span>
 						</div>
-						<a href="#" class="btn" data-type="submit">提交</a>
+						<a href="javascript:void(0);" class="btn" data-type="submit">提交</a>
 					</form>
 				</div>
 				<div class="grid_5 prefix_1">
@@ -287,10 +295,9 @@
 				$('#bookingForm').bookingForm({
 					ownerEmail: '#'
 				});
+
+//                $('#bookingForm input, #bookingForm textarea').placeholder();
 			})
-			$(function() {
-				$('#bookingForm input, #bookingForm textarea').placeholder();
-			});
 		</script>
 
     <div id="dialog_more" style="display:none; overflow: auto; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 1000; background-color: rgba(0, 0, 0, 0.55);" class="mod-dialog-frame">
@@ -315,4 +322,3 @@
     </div>
 </body>
 </html>
-
