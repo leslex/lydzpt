@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>首页</title>
+		<meta charset="utf-8">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="booking/css/booking.css">
+		<link rel="stylesheet" href="css/camera.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.2.1.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.mobilemenu.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/owl.carousel.js"></script>
+		<script src="js/camera.js"></script>
+		<!--[if (gt IE 9)|!(IE)]><!-->
+		<script src="js/jquery.mobile.customized.min.js"></script>
+		<!--<![endif]-->
+		<script src="booking/js/booking.js"></script>
+		<script>
+			$(document).ready(function(){
+			jQuery('#camera_wrap').camera({
+				loader: false,
+				pagination: false ,
+				minHeight: '444',
+				thumbnails: false,
+				height: '48.375%',
+				caption: true,
+				navigation: true,
+				fx: 'mosaic'
+			});
+			/*carousel*/
+			var owl=$("#owl");
+				owl.owlCarousel({
+				items : 2, //10 items above 1000px browser width
+				itemsDesktop : [995,2], //5 items between 1000px and 901px
+				itemsDesktopSmall : [767, 2], // betweem 900px and 601px
+				itemsTablet: [700, 2], //2 items between 600 and 0
+				itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+				navigation : true,
+				pagination : false
+				});
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+		<!--[if lt IE 8]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+			</a>
+		</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+	</head>
+	<body class="page1" id="top">
+<!--==============================header=================================-->
+		<header>
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="menu_block">
+						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+							<ul class="sf-menu">
+								<li class="current"><a href="index.html">首页</a></li>
+								<li><a href="hot_tours.html">热门景点</a></li>
+                                <li><a href="blog.html">农家特产</a></li>
+								<li><a href="special_offers.html">特价优惠</a></li>
+								<li><a href="contacts.html">关于我们</a></li>
+							</ul>
+						</nav>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="grid_12">
+					<h1>
+						<a href="index.html">
+							<img src="images/logo.png" alt="Your Happy Family">
+						</a>
+					</h1>
+				</div>
+			</div>
+		</header>
+		<div class="slider_wrapper">
+			<div id="camera_wrap" class="">
+				<div data-src="images/slide1.jpg">
+					<div class="caption fadeIn">
+						<h2>玉龙雪山</h2>
+						<div class="price">
+							团购
+							<span>¥500</span>
+						</div>
+						<a href="javascript:void(0)" onclick="javascript:$('#dialog_more').show();">了解更多</a>
+					</div>
+				</div>
+				<div data-src="images/slide2.jpg">
+					<div class="caption fadeIn">
+						<h2>大理</h2>
+						<div class="price">
+                            团购
+							<span>¥600</span>
+						</div>
+						<a href="javascript:void(0)" onclick="javascript:$('#dialog_more').show();">了解更多</a>
+					</div>
+				</div>
+				<div data-src="images/slide3.jpg">
+					<div class="caption fadeIn">
+						<h2>泸沽湖</h2>
+						<div class="price">
+                            团购
+							<span>¥800</span>
+						</div>
+						<a href="javascript:void(0)" onclick="javascript:$('#dialog_more').show();">了解更多</a>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--==============================Content=================================-->
+		<div class="content">
+			<div class="container_12">
+				<div class="grid_4">
+					<div class="banner">
+						<img src="images/ban_img1.jpg" alt="">
+						<div class="label">
+							<div class="title">宋城千古情</div>
+							<div class="price">门票<span>¥ 280</span></div>
+							<a href="javascript:void(0)" onclick="javascript:$('#dialog_more').show();">了解更多</a>
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="banner">
+						<img src="images/ban_img2.jpg" alt="">
+						<div class="label">
+							<div class="title">银都水乡</div>
+							<div class="price">门票<span>¥ 198</span></div>
+							<a href="javascript:void(0)" onclick="javascript:$('#dialog_more').show();">了解更多</a>
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="banner">
+						<img src="images/ban_img3.jpg" alt="">
+						<div class="label">
+							<div class="title">拉市海</div>
+							<div class="price">门票<span>¥ 30</span></div>
+							<a href="javascript:void(0)" onclick="javascript:$('#dialog_more').show();">了解更多</a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="grid_6">
+					<h3>留言(专车接送、客栈预定)</h3>
+					<form id="bookingForm">
+                        <strong>联系人</strong>
+                        <label class="tmInput">
+                            <input name="name" placeHolder="联系人" type="text" data-constraints='@Required @AlphaSpecial'>
+                            <span class="empty-message">*必填.</span>
+                        </label>
+                        <div class="clear"></div>
+                        <strong>联系电话</strong>
+                        <label class="tmInput">
+                            <input name="phone" placeHolder="联系电话" type="text" data-constraints="@Required">
+                        </label>
+						<div class="clear"></div>
+						<div class="fl1 fl2">
+							<em>成人</em>
+							<select name="Adults" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+								<option>0</option>
+                                <option>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+                            <div class="clear"></div>
+                            <em>行李</em>
+                            <select name="Bags" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+                                <option>0</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+						</div>
+						<div class="fl1 fl2">
+							<em>小孩</em>
+							<select name="Children" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+								<option>0</option>
+                                <option>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+                            <div class="clear"></div>
+                            <em>房间</em>
+                            <select name="Rooms" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+                                <option>0</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+						</div>
+						<div class="clear"></div>
+						<div class="tmTextarea">
+							<textarea name="Message" placeHolder="附加留言" data-constraints='@Length(min=5,max=999999)'></textarea>
+                            <span class="error-message">*非必填，留言太短，5字以上.</span>
+						</div>
+						<a href="#" class="btn" data-type="submit">提交</a>
+					</form>
+				</div>
+				<div class="grid_5 prefix_1">
+					<h3>百汇休闲庄</h3>
+					<img src="images/page1_img1.jpg" alt="" class="img_inner fleft">
+					<div class="extra_wrapper">
+						<p>百汇休闲庄是三义飞机场附近的一家农家乐。</p>
+                        集住宿休闲、度假、旅游包车、景点接送、机场接送、客栈住宿、烧烤、火锅为一体。
+					</div>
+					<div class="clear cl1"></div>
+					<p>专为游客及本地人提供一种回归自然、放松身心的休闲旅游方式，体验丽江的人文风情，是避暑及消遣的好去处。</p>
+					<p>提供<span class="col1">专车</span>直接游不同的景点，既体验农家风情，又游览美景。</p>
+					每年的<span class="col1">三八妇女节</span>及<span class="col1">五四青年节</span>都有大型的文艺演出及歌舞表演。欢迎大家前来参加及观看。
+					<h4>联系我们</h4>
+					<blockquote class="">
+						<img src="images/page1_img2.jpg" alt="微信" class="img_inner noresize fleft">
+						<div class="extra_wrapper">
+							<p style="margin-top:12px;">只有想不到，没有做不到。只要是休闲娱乐，联系我们准没错。欢迎大家留言咨询，我们会尽快联系您。</p>
+							<div class="alright">
+								<div class="col1">18659192409</div>
+								<a href="contacts.html" class="btn">更多</a>
+							</div>
+						</div>
+					</blockquote>
+				</div>
+				<div class="grid_12">
+					<h3 class="head1">农家特产</h3>
+				</div>
+				<div class="grid_4">
+					<div class="block1">
+						<time datetime="2015-08-10">10<span>8月</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a target="_blank" href="http://baike.baidu.com/view/153753.htm?fromtitle=%E7%8E%9B%E5%92%96&fromid=1029791&type=syn">丽江玛咖</a></div>
+                            中国玛咖看云南，云南玛咖看丽江。带地里现挖现卖，不用担心假玛咖。价格虽贵，但贵得放心。
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="block1">
+						<time datetime="2015-08-10">9<span>8月</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a target="_blank" href="http://baike.baidu.com/link?url=Llxs5qqb1_kqJdqlYOjsL7mngePd6Nkm9E3D7GnVoDIyL3LDggn8Oe5Hh2eK1n6VqXfJsGDIupzWL3sTppSsWbjRzCRncAooK0nulniDMQ3">冬虫夏草</a></div>
+                            虫草是丽江雪域高原的名产之一,又名葫芦草、冬虫夏草。其滋补和治疗功用在人参、鹿茸之上。
+						</div>
+					</div>
+				</div>
+				<div class="grid_4">
+					<div class="block1">
+						<time datetime="2015-08-10">8<span>8月</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a target="_blank" href="http://baike.baidu.com/link?url=63d5bVrjmoz1ftMEvCiYJrAhfkr0fTglvxMBT0JkjSryakn6_ZC6xaQU7vIO930BkIX09pm-OJeJNxNTQ-LFvK">丽江雪桃</a></div>
+                            水溶性固形物含量高，含人体必需的20种氨基酸中的15种，营养极为丰富，是馈赠礼品中的佳品。
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+		<footer>
+			<div class="container_12">
+				<div class="grid_12" style="padding-top: 30px;text-align: center;">
+                    <img src="images/page1_img2.jpg" alt="微信">
+				</div>
+			</div>
+		</footer>
+		<script>
+			$(function (){
+				$('#bookingForm').bookingForm({
+					ownerEmail: '#'
+				});
+			})
+			$(function() {
+				$('#bookingForm input, #bookingForm textarea').placeholder();
+			});
+		</script>
+
+    <div id="dialog_more" style="display:none; overflow: auto; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 1000; background-color: rgba(0, 0, 0, 0.55);" class="mod-dialog-frame">
+        <div class="mod-dialog-wrap" style="overflow: hidden; position: absolute;  top: 50%; left: 50%; margin-top: -160px; margin-left: -244px; background-color: rgb(255, 255, 255); border-radius: 3px;box-shadow: 2px 2px 5px 3px rgba(23, 24, 26, 0.3);">
+            <div class="msg-dialog">
+                <div class="msg-bd" >
+                    <div class="contact">
+                        <div class="tp">
+                            <p>如需了解详情请联系</p>
+                            <p>客服电话：18659192409</p>
+                        </div>
+                        <div class="candidate">
+                            <p>如电话繁忙，您可以联系私人电话：13988829404</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button data-node="ok-btn" class="ok" onclick="javascript:$('#dialog_more').hide();">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
