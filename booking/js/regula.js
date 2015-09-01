@@ -19,10 +19,17 @@ regula.custom({
         return /^[a-zA-Z'][a-zA-Z-' ]+[a-zA-Z']?$/.test(this.value)
     }
 })
+regula.custom({
+    name:'Required1',
+    defaultMessage: "必填!",
+    validator:function(){
+        return /^.*[^\s]+.*$/.test(this.value)
+    }
+})
 // check phones and faxes
 regula.custom({
     name:'Phone',
-    defaultMessage: "The text field can only contain phones numbers!",
+    defaultMessage: "必须填手机号码!",
     validator:function(){
         return /^\+?(\d[\d\-\+\(\) ]{5,}\d$)/.test(this.value)
     }
