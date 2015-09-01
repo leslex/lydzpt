@@ -112,8 +112,8 @@
 			
 			function formSubmit(){
 				$('[data-constraints]',form).trigger('validate.form')
-				
-				if(!$('label.'+opt.invalidClass+',label.'+opt.emptyClass,form).length){					
+
+                if(!$('label.'+opt.invalidClass+',label.'+opt.emptyClass,form).length){
 					$.ajax({
 						type:"POST"
 						,url:opt.mailHandlerURL
@@ -250,9 +250,3 @@ regula.custom({
 		return /^\+?(\d[\d\-\+\(\) ]{5,}\d$)/.test(this.value)
 	}
 })
-
-$(window).load(function(){
-      $('#form').TMForm({
-          ownerEmail:'#' 
-      })
-    })

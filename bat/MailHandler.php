@@ -1,91 +1,55 @@
 <?php
-
 	//SMTP server settings	
-	$host = "smtp.host.com";
-    $port = "587";
+	$host = "smtp.qq.com";
+    $port = "25";
     $username = "";
     $password = "";
-	
 	
 	$messageBody = "";
 	
 	if($_POST['name']!='false'){
-		$messageBody .= '<p>Visitor: ' . $_POST["name"] . '</p>' . "\n";
+		$messageBody .= '<p>联系人: ' . strip_tags($_POST["name"]) . '</p>' . "\n";
 		$messageBody .= '<br>' . "\n";
 	}
-	if($_POST['name']!='false'){
-		$messageBody .= '<p>Country: ' . $_POST["country"] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
-	if($_POST['email']!='false'){
-		$messageBody .= '<p>Email Address: ' . $_POST['email'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}else{
-		$headers = '';
-	}
-	if($_POST['state']!='false'){		
-		$messageBody .= '<p>State: ' . $_POST['state'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
-	if($_POST['phone']!='false'){		
-		$messageBody .= '<p>Phone Number: ' . $_POST['phone'] . '</p>' . "\n";
+	if($_POST['phone']!='false'){
+		$messageBody .= '<p>联系电话: ' . strip_tags($_POST['phone']) . '</p>' . "\n";
 		$messageBody .= '<br>' . "\n";
 	}	
-	if($_POST['fax']!='false'){		
-		$messageBody .= '<p>Fax Number: ' . $_POST['fax'] . '</p>' . "\n";
-		$messageBody .= '<br>' . "\n";
-	}
 	if($_POST['message']!='false'){
-		$messageBody .= '<p>Message: ' . $_POST['message'] . '</p>' . "\n";
-	}
-	
-	if($_POST["stripHTML"] == 'true'){
-		$messageBody = strip_tags($messageBody);
+		$messageBody .= '<p>留言: ' . strip_tags($_POST['message']) . '</p>' . "\n";
 	}
 	
 	if($host=="" or $username=="" or $password==""){
-		$owner_email = $_POST["owner_email"];
-		$headers = 'From:' . $_POST["email"] . "\r\n" . 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
-		$subject = 'A message from your site visitor ' . $_POST["name"];
-		
-		try{
-			if(!mail($owner_email, $subject, $messageBody, $headers)){
-				throw new Exception('mail failed');
-				}else{
-				echo 'mail sent';
-			}
-			}catch(Exception $e){
-			echo $e->getMessage() ."\n";
-		}
-	}else{	
-		require_once 'Mail.php';
+        exit('请设置服务器邮箱信息');
+	}
 
-		$to = $_POST["owner_email"];
-		$subject = 'A message from your site visitor ' . $_POST["name"];
-		$headers = array (
-		'From' => 'From:' . $_POST["email"] . "\r\n" . 'Content-Type: text/plain; charset=UTF-8' . "\r\n",
-		'To' => $to,
-		'Subject' => $subject);
-		
-		$smtp = Mail::factory(
-					'smtp',
-					array (
-						'host' => $host,
-						'port' => $port,
-						'auth' => true,
-						'username' => $username,
-						'password' => $password));
+    require("phpmailer/class.phpmailer.php");
+    require("phpmailer/class.smtp.php");
 
-		$mail = $smtp->send($to, $headers, $messageBody);
-		
-		try{
-			if(PEAR::isError($mail)){
-				echo $mail->getMessage();
-				}else{
-				echo 'mail sent';
-			}
-			}catch(Exception $mail){
-			echo $mail->getMessage() ."\n";
-		}
-	}	
+    //以下是实例:
+    $mail = new phpmailer(); //建立邮件发送类
+    $mail->SetLanguage('zh_cn');
+    $mail->Host = $host; // 您的企业邮局域名
+    $mail->Port = $port; // 您的企业邮局域名
+    $mail->SMTPAuth = true; // 启用SMTP验证功能
+    $mail->Username = $username; // 邮局用户名(请填写完整的email地址)
+    $mail->Password = $password; // 邮局密码
+    $mail->From = $username; //邮件发送者email地址
+    $mail->FromName = $username;
+    $mail->AddAddress("", "");//收件人地址，可以替换成任何想要接收邮件的email信箱,格式是AddAddress("收件人email","收件人姓名")
+    //$mail->AddReplyTo("", "");
+
+    //$mail->AddAttachment("/var/tmp/file.tar.gz"); // 添加附件
+    $mail->IsHTML(true); // set email format to HTML //是否使用HTML格式
+    $mail->Subject = '【丽江旅游定制平台】'.strip_tags($_POST["name"]).' 发来留言'; //邮件标题
+    $mail->Body = $messageBody; //邮件内容
+    $mail->IsSMTP(); // 使用SMTP方式发送
+    if(!$mail->Send())
+    {
+         echo "邮件发送失败: " . $mail->ErrorInfo;
+         exit;
+    }
+
+    echo "邮件发送成功";
+    exit();
 ?>

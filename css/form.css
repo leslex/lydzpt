@@ -171,11 +171,11 @@
 	display: none;
 	opacity: 0;
 	position: absolute;
-	background: #f0f3f5;
+	background: #f0f3f5 url("../images/ok.png") no-repeat 0 center;
 	width: 100%;
-	height: 74px;
-	text-align: center;
-	padding: 25px 10px;
+	height: 374px;
+    text-indent: 120px;
+	padding: 185px 10px;
 	z-index: 999;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box; /*Firefox 1-3*/
