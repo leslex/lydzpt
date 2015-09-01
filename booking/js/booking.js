@@ -15,9 +15,9 @@ includeScript ('../booking/js/regula.js');
 			var $this = $(this),
 			data = $this.data('bookingForm'),
 			object = {
-				url: 'booking/booking.php', // php-script url
+				url: 'bat/MailHandler.php?do=booking', // php-script url
 				sender: '', // sender for header in e-mail
-				ownerEmail:'leslex@qq.com', // destination e-mail, message will be send on this e-mail
+				ownerEmail:'814420673@qq.com', // destination e-mail, message will be send on this e-mail
 				validate:true, // validate or not
 				errorMessageClass:'.error-message', // error-message class
 				successMessageClass:'.success-message', // success-message class
@@ -29,7 +29,7 @@ includeScript ('../booking/js/regula.js');
 				radioClass: '.tmRadio', // radiobutton class
 				datepickerClass: '.tmDatepicker', // datepicker class
 				wrapperClass: '.controlHolder', // wrapper class, all elements will be wrapped in div with this class
-				successMessage: "您的订单已提交成功! 我们将尽快联系您!", // success message
+				successMessage: "订单发送成功，我们将通过手机很您联系!", // success message
 				// private fields
 				form: null,
 				fields: [],
